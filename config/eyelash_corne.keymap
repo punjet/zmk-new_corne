@@ -43,16 +43,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // In the AERO layer: drop the held Left Option (Hyper via Karabiner) and send
-        // Right Option + Space, which Karabiner passes through untouched -> opens Sol.
-        sol: sol {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Sol Launcher";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp RA(SPACE)>;
-            mods = <(MOD_LALT)>;
-        };
-
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -88,6 +78,21 @@
                 = <&macro_press &mo AERO &kp LALT>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT &mo AERO>;
+        };
+
+        // In the AERO layer: release the held Left Option first and give Karabiner time
+        // to drop Hyper, then send Right Option + Space (passed through) -> opens Sol.
+        // Left Option is pressed again so Right FN still acts as Hyper afterwards.
+        sol: sol {
+            compatible = "zmk,behavior-macro";
+            display-name = "Sol Launcher";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_release &kp LALT>
+                , <&macro_tap &kp RA(SPACE)>
+                , <&macro_press &kp LALT>;
         };
     };
 
