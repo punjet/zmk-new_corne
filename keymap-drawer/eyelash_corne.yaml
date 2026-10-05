@@ -199,3 +199,5 @@ layers:
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
+- p: [42, 43, 44, 45, 46, 47]
+  k: Ctl+Gui+Q
