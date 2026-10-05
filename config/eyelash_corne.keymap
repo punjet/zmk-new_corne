@@ -103,6 +103,15 @@
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
         };
+
+        // All six thumb keys at once = lock the Mac (Ctrl+Cmd+Q).
+        // Ignored right after typing so normal thumb use never waits on it.
+        lock_mac {
+            bindings = <&kp LC(LG(Q))>;
+            key-positions = <42 43 44 45 46 47>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     keymap {
