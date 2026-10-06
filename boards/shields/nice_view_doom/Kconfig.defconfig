@@ -52,4 +52,16 @@ endif # !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
     select LV_FONT_MONTSERRAT_26
 
+choice NICE_VIEW_DOOM_ART
+    prompt "Picture on the right-hand nice!view"
+    default NICE_VIEW_DOOM_ART_KUNTEYNIR
+
+config NICE_VIEW_DOOM_ART_DOOM
+    bool "MF DOOM mask (art/doom_mask.png)"
+
+config NICE_VIEW_DOOM_ART_KUNTEYNIR
+    bool "Kunteynir logo (art/kunteynir.png)"
+
+endchoice
+
 endif # SHIELD_NICE_VIEW_DOOM
