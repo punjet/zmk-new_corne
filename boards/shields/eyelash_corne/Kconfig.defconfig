@@ -45,4 +45,5 @@ endif # ZMK_BACKLIGHT
 endif # SHIELD_EYELASH_CORNE_LEFT || SHIELD_EYELASH_CORNE_RIGHT
 
 config EYELASH_LED_TEST
-    bool "LED order test: walk a dot along the LED chain instead of underglow"
+    bool "LED order test: light the LED chain one by one instead of underglow"
+    select LED_STRIP
