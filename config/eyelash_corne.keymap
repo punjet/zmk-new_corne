@@ -146,7 +146,7 @@
             bindings = <
 &studio_unlock  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                      &trans                  &kp F6        &kp F7        &kp F8          &kp F9           &kp F10         &kp F11
 &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR          &trans  &trans  &trans          &out OUT_USB  &out OUT_BLE  &rgb_ug RGB_TOG &rgb_ug RGB_EFF  &kp LG(LS(N4))  &kp F12
-&trans          &sys_reset    &none         &bootloader   &none         &none       &trans          &trans                  &none         &none         &bootloader     &sys_reset       &none           &none
+&trans          &sys_reset    &none         &bootloader   &none         &none       &trans          &trans                  &rgb_ug RGB_BRD &rgb_ug RGB_BRI &bootloader     &sys_reset       &none           &none
                                             &trans        &trans        &trans                                              &trans        &trans        &trans
             >;
 
