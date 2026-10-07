@@ -43,7 +43,3 @@ config LED_PWM
 endif # ZMK_BACKLIGHT
 
 endif # SHIELD_EYELASH_CORNE_LEFT || SHIELD_EYELASH_CORNE_RIGHT
-
-config EYELASH_LED_TEST
-    bool "LED order test: light the LED chain one by one instead of underglow"
-    select LED_STRIP
