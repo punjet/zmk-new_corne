@@ -83,7 +83,9 @@
         };
 
         // In the AERO layer: release the held Left Option first and give Karabiner time
-        // to drop Hyper, then send Right Option + Space (passed through) -> opens Sol.
+        // to drop Hyper, then tap Keypad = which Karabiner turns into Right Option + Space
+        // (Karabiner output is not remapped again, so it is not Hyper even in Logic Pro,
+        // where Right Option becomes Hyper) -> opens Sol.
         // Left Option is pressed again so Right FN still acts as Hyper afterwards.
         sol: sol {
             compatible = "zmk,behavior-macro";
@@ -93,7 +95,7 @@
             tap-ms = <30>;
             bindings
                 = <&macro_release &kp LALT>
-                , <&macro_tap &kp RA(SPACE)>
+                , <&macro_tap &kp KP_EQUAL>
                 , <&macro_press &kp LALT>;
         };
     };
@@ -113,6 +115,15 @@
             key-positions = <42 43 44 45 46 47>;
             timeout-ms = <80>;
             require-prior-idle-ms = <150>;
+        };
+
+        // Left Cmd + Left FN together (one thumb) = plain Option while held, for Option+click.
+        // Sends Keypad 0, Karabiner turns it into Left Option without the Hyper remap.
+        plain_option {
+            bindings = <&kp KP_N0>;
+            key-positions = <42 43>;
+            layers = <BASE>;
+            timeout-ms = <50>;
         };
 
         // Home-row chords for punctuation. They send keys a Mac keyboard does not have,
