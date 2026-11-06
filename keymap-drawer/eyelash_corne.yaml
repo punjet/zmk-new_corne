@@ -201,6 +201,9 @@ combos:
   k: '&soft_off'
 - p: [42, 43, 44, 45, 46, 47]
   k: Ctl+Gui+Q
+- p: [42, 43]
+  k: KP 0
+  l: [QWERTY]
 - p: [14, 15, 16, 17]
   k: PRINTSCREEN
   l: [QWERTY]

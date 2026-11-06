@@ -555,12 +555,18 @@ rect.held, rect.combo.held {
 </text>
 </g>
 <g class="combo combopos-2">
+<rect rx="6" ry="6" x="241" y="193" width="28" height="26" class="combo"/>
+<text x="255" y="206" class="combo tap">
+<tspan x="255" dy="-0.6em">KP</tspan><tspan x="255" dy="1.2em">0</tspan>
+</text>
+</g>
+<g class="combo combopos-3">
 <path d="M168,93 l-66,10" class="combo"/>
 <path d="M168,93 l65,-1" class="combo"/>
 <rect rx="6" ry="6" x="154" y="80" width="28" height="26" class="combo"/>
 <text x="168" y="93" class="combo tap"><tspan style="font-size: 60%">PRINTSCRE…</tspan></text>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M812,93 l-65,-1" class="combo"/>
 <path d="M812,93 l66,10" class="combo"/>
 <rect rx="6" ry="6" x="798" y="80" width="28" height="26" class="combo"/>
