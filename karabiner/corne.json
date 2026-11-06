@@ -1,0 +1,673 @@
+{
+    "title": "Eyelash Corne (zmk-new_corne mac-aerospace)",
+    "rules": [
+        {
+            "description": "Caps Lock and Left Option to Cmd+Ctrl+Alt (Left Option disabled in Logic Pro and Final Cut Pro)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.logic10$",
+                                "^com\\.apple\\.FinalCutApp$"
+                            ],
+                            "type": "frontmost_application_unless"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "left_option",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "Corne: Pause = toggle ABC <-> RussianWin (left FN tap)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "pause",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "pause",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_unless",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Scroll Lock = comma, Print Screen = period in ABC and RussianWin (chords jkl; / asdf)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "scroll_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "slash",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "scroll_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_unless",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "comma"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "print_screen",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "slash"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "print_screen",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "input_source_unless",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "period"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Insert / Application = [ ] (left FN + S/D); in Obsidian also on RussianWin",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "insert",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^md\\.obsidian$"
+                            ]
+                        },
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+                            }
+                        },
+                        {
+                            "key_code": "vk_none",
+                            "hold_down_milliseconds": 30
+                        },
+                        {
+                            "key_code": "open_bracket"
+                        },
+                        {
+                            "key_code": "vk_none",
+                            "hold_down_milliseconds": 30
+                        },
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "application",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^md\\.obsidian$"
+                            ]
+                        },
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [
+                                {
+                                    "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+                            }
+                        },
+                        {
+                            "key_code": "vk_none",
+                            "hold_down_milliseconds": 30
+                        },
+                        {
+                            "key_code": "close_bracket"
+                        },
+                        {
+                            "key_code": "vk_none",
+                            "hold_down_milliseconds": 30
+                        },
+                        {
+                            "select_input_source": {
+                                "input_source_id": "^com\\.apple\\.keylayout\\.RussianWin$"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "insert",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "open_bracket"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "application",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "close_bracket"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Logic/FCP - hold Right Option (rightmost thumb) = Hyper for AeroSpace",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_option",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        },
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.logic10$",
+                                "^com\\.apple\\.FinalCutApp$"
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Keypad = (Right FN + Space macro) = Right Option + Space for Sol",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "keypad_equal_sign",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Keypad 0 (Left Cmd + Left FN chord) = plain Left Option, no Hyper",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "keypad_0",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Keypad 1 (NUM layer, B) = Option+Backspace (delete word)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "keypad_1",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Corne: Keypad 2 / 3 (Left FN + F+D / J+K chords) = Option+Left / Option+Right",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "keypad_2",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "keypad_3",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 7504,
+                                    "product_id": 24926
+                                }
+                            ]
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
