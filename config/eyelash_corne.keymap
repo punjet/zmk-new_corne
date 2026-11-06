@@ -164,7 +164,10 @@
         };
 
         // Right Enter thumb = Cmd here, so Cmd + number / arrow does not need the left
-        // thumb on both Cmd and Left FN.
+        // thumb on both Cmd and Left FN. Right FN = plain Option (Keypad 0 via Karabiner)
+        // for Option + arrow word jumps. Left bottom row = undo / cut / copy / paste /
+        // delete word (Keypad 1, Karabiner sends Option+Backspace: a firmware Left Option
+        // would turn into Hyper); volume and mute on the right bottom row.
         // Left FN + S / D = Insert / Application. Karabiner turns them into [ / ]
         // (in Obsidian also when the Russian layout is active).
         num_layer {
@@ -172,8 +175,8 @@
             bindings = <
 &kp LS(TAB)  &kp N1      &kp N2      &kp N3      &kp N4     &kp N5                          &trans                  &kp N6   &kp N7       &kp N8       &kp N9    &kp N0    &kp BSLH
 &trans       &kp GRAVE   &kp INSERT  &kp K_APP   &kp MINUS  &kp EQUAL               &trans  &trans  &trans          &kp LEFT &kp DOWN     &kp UP       &kp RIGHT &kp HOME  &kp PG_UP
-&trans       &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP &kp C_NEXT      &trans          &trans                  &kp DEL  &kp C_BRI_DN &kp C_BRI_UP &none     &kp END   &kp PG_DN
-                                     &trans      &trans     &trans                                                  &kp LGUI &trans       &mo FUNC
+&trans       &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)  &kp KP_N1       &trans          &trans                  &kp DEL  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp END  &kp PG_DN
+                                     &trans      &trans     &trans                                                  &kp LGUI &kp KP_N0    &mo FUNC
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
@@ -184,7 +187,7 @@
             bindings = <
 &studio_unlock  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                      &trans                  &kp F6        &kp F7        &kp F8          &kp F9           &kp F10         &kp F11
 &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR          &trans  &trans  &trans          &out OUT_USB  &out OUT_BLE  &rgb_ug RGB_TOG &rgb_ug RGB_EFF  &kp LG(LS(N4))  &kp F12
-&trans          &sys_reset    &none         &bootloader   &none         &none       &trans          &trans                  &rgb_ug RGB_BRD &rgb_ug RGB_BRI &bootloader     &sys_reset       &rgb_ug RGB_COLOR_HSB(0,0,50) &none
+&trans          &sys_reset    &kp C_BRI_DN  &bootloader   &kp C_BRI_UP  &kp C_PP    &trans          &trans                  &rgb_ug RGB_BRD &rgb_ug RGB_BRI &bootloader     &sys_reset       &rgb_ug RGB_COLOR_HSB(0,0,50) &kp C_NEXT
                                             &trans        &trans        &trans                                              &trans        &trans        &trans
             >;
 
