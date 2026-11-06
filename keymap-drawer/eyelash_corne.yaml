@@ -96,7 +96,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - LGUI
-  - KP 0
+  - {t: '$$mdi:transfer$$', type: trans}
   - Fn
   Fn:
   - '&studio_unlock'
