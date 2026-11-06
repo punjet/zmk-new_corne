@@ -163,6 +163,8 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
+        // Right Enter thumb = Cmd here, so Cmd + number / arrow does not need the left
+        // thumb on both Cmd and Left FN.
         // Left FN + S / D = Insert / Application. Karabiner turns them into [ / ]
         // (in Obsidian also when the Russian layout is active).
         num_layer {
@@ -171,7 +173,7 @@
 &kp LS(TAB)  &kp N1      &kp N2      &kp N3      &kp N4     &kp N5                          &trans                  &kp N6   &kp N7       &kp N8       &kp N9    &kp N0    &kp BSLH
 &trans       &kp GRAVE   &kp INSERT  &kp K_APP   &kp MINUS  &kp EQUAL               &trans  &trans  &trans          &kp LEFT &kp DOWN     &kp UP       &kp RIGHT &kp HOME  &kp PG_UP
 &trans       &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp C_PP &kp C_NEXT      &trans          &trans                  &kp DEL  &kp C_BRI_DN &kp C_BRI_UP &none     &kp END   &kp PG_DN
-                                     &trans      &trans     &trans                                                  &kp RALT &trans       &mo FUNC
+                                     &trans      &trans     &trans                                                  &kp LGUI &trans       &mo FUNC
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
