@@ -126,6 +126,22 @@
             timeout-ms = <50>;
         };
 
+        // While Left FN is held: F+D = Option+Left, J+K = Option+Right (word jumps).
+        // Keypad 2 / 3, Karabiner adds Option (a firmware Left Option would become Hyper).
+        word_left {
+            bindings = <&kp KP_N2>;
+            key-positions = <16 17>;
+            layers = <NUM>;
+            timeout-ms = <50>;
+        };
+
+        word_right {
+            bindings = <&kp KP_N3>;
+            key-positions = <23 24>;
+            layers = <NUM>;
+            timeout-ms = <50>;
+        };
+
         // Home-row chords for punctuation. They send keys a Mac keyboard does not have,
         // and Karabiner types the character for the active layout (ABC or RussianWin).
         // asdf = period (Print Screen), jkl; = comma (Scroll Lock).
@@ -167,7 +183,7 @@
         // thumb on both Cmd and Left FN. Right FN = plain Option (Keypad 0 via Karabiner)
         // for Option + arrow word jumps. Left bottom row = undo / cut / copy / paste /
         // delete word (Keypad 1, Karabiner sends Option+Backspace: a firmware Left Option
-        // would turn into Hyper); volume and mute on the right bottom row.
+        // would turn into Hyper); volume and previous track on the right bottom row.
         // Left FN + S / D = Insert / Application. Karabiner turns them into [ / ]
         // (in Obsidian also when the Russian layout is active).
         num_layer {
@@ -175,7 +191,7 @@
             bindings = <
 &kp LS(TAB)  &kp N1      &kp N2      &kp N3      &kp N4     &kp N5                          &trans                  &kp N6   &kp N7       &kp N8       &kp N9    &kp N0    &kp BSLH
 &trans       &kp GRAVE   &kp INSERT  &kp K_APP   &kp MINUS  &kp EQUAL               &trans  &trans  &trans          &kp LEFT &kp DOWN     &kp UP       &kp RIGHT &kp HOME  &kp PG_UP
-&trans       &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)  &kp KP_N1       &trans          &trans                  &kp DEL  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp END  &kp PG_DN
+&trans       &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)  &kp KP_N1       &trans          &trans                  &kp DEL  &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp END  &kp PG_DN
                                      &trans      &trans     &trans                                                  &kp LGUI &kp KP_N0    &mo FUNC
             >;
 
