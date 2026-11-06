@@ -151,7 +151,7 @@
             bindings = <&kp PRINTSCREEN>;
             key-positions = <14 15 16 17>;
             layers = <BASE>;
-            timeout-ms = <40>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <150>;
         };
 
@@ -159,7 +159,7 @@
             bindings = <&kp SCROLLLOCK>;
             key-positions = <23 24 25 26>;
             layers = <BASE>;
-            timeout-ms = <40>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <150>;
         };
     };
@@ -180,8 +180,9 @@
         };
 
         // Right Enter thumb = Cmd here, so Cmd + number / arrow does not need the left
-        // thumb on both Cmd and Left FN. Right FN = plain Option (Keypad 0 via Karabiner)
-        // for Option + arrow word jumps. Left bottom row = undo / cut / copy / paste /
+        // thumb on both Cmd and Left FN. Right FN stays transparent (Hyper), so
+        // Left FN + Right FN + number reaches AeroSpace workspaces in any press order;
+        // word jumps are the F+D / J+K chords. Left bottom row = undo / cut / copy / paste /
         // delete word (Keypad 1, Karabiner sends Option+Backspace: a firmware Left Option
         // would turn into Hyper); volume and previous track on the right bottom row.
         // Left FN + S / D = Insert / Application. Karabiner turns them into [ / ]
@@ -192,7 +193,7 @@
 &kp LS(TAB)  &kp N1      &kp N2      &kp N3      &kp N4     &kp N5                          &trans                  &kp N6   &kp N7       &kp N8       &kp N9    &kp N0    &kp BSLH
 &trans       &kp GRAVE   &kp INSERT  &kp K_APP   &kp MINUS  &kp EQUAL               &trans  &trans  &trans          &kp LEFT &kp DOWN     &kp UP       &kp RIGHT &kp HOME  &kp PG_UP
 &trans       &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(V)  &kp KP_N1       &trans          &trans                  &kp DEL  &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp END  &kp PG_DN
-                                     &trans      &trans     &trans                                                  &kp LGUI &kp KP_N0    &mo FUNC
+                                     &trans      &trans     &trans                                                  &kp LGUI &trans       &mo FUNC
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
