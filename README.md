@@ -1,5 +1,6 @@
 - [中文](README.md)
 - [English](README_EN.md)
+- [Mac setup (this fork): SETUP.md](SETUP.md)
 
 # 睫毛外设 (Eyelash Peripherals) Corne ZMK 仓库
 
