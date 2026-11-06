@@ -44,7 +44,7 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:backspace$$', type: backspace}
   - LGUI
-  - {t: 'Gui+$$mdi:keyboard-space$$', h: NUM+SYM}
+  - {t: F19, h: NUM+SYM}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - '&aero'
@@ -65,8 +65,8 @@ layers:
   - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '`', s: '~'}
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - F17
+  - F18
   - {t: '-', s: _}
   - {t: '=', s: +}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -201,3 +201,9 @@ combos:
   k: '&soft_off'
 - p: [42, 43, 44, 45, 46, 47]
   k: Ctl+Gui+Q
+- p: [14, 15, 16, 17]
+  k: F16
+  l: [QWERTY]
+- p: [23, 24, 25, 26]
+  k: F13
+  l: [QWERTY]

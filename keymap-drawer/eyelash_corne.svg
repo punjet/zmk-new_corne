@@ -510,7 +510,7 @@ rect.held, rect.combo.held {
 <g transform="translate(285, 209) rotate(12.0)" class="key keypos-43">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:keyboard-space"/>
+<text x="0" y="-4" class="key tap">F19</text>
 <a href="#NUMSYM">
 <text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 86%">NUM+SYM</tspan></text>
 </a></g>
@@ -551,6 +551,18 @@ rect.held, rect.combo.held {
 <text x="490" y="212" class="combo tap">
 <tspan x="490" dy="-0.6em">Ctl+</tspan><tspan x="490" dy="1.2em">Gui+Q</tspan>
 </text>
+</g>
+<g class="combo combopos-2">
+<path d="M168,93 l-66,10" class="combo"/>
+<path d="M168,93 l65,-1" class="combo"/>
+<rect rx="6" ry="6" x="154" y="80" width="28" height="26" class="combo"/>
+<text x="168" y="93" class="combo tap">F16</text>
+</g>
+<g class="combo combopos-3">
+<path d="M812,93 l-65,-1" class="combo"/>
+<path d="M812,93 l66,10" class="combo"/>
+<rect rx="6" ry="6" x="798" y="80" width="28" height="26" class="combo"/>
+<text x="812" y="93" class="combo tap">F13</text>
 </g>
 </g>
 </g>
@@ -647,14 +659,12 @@ rect.held, rect.combo.held {
 <g transform="translate(140, 91)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">[</text>
-<text x="0" y="-24" class="key shifted">{</text>
+<text x="0" y="-4" class="key tap">F17</text>
 </g>
 <g transform="translate(196, 84)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">]</text>
-<text x="0" y="-24" class="key shifted">}</text>
+<text x="0" y="-4" class="key tap">F18</text>
 </g>
 <g transform="translate(252, 91)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
